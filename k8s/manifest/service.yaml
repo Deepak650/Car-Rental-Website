@@ -9,7 +9,7 @@ spec:
     - protocol: TCP
       port: 80        # The internal service port
       targetPort: 8080 # The port your application is listening on
-      nodePort: 30002  # First external port exposed
+      nodePort: 32760  # First external port exposed
   type: NodePort
 
 ---
@@ -24,7 +24,7 @@ spec:
     - protocol: TCP
       port: 80        # The internal service port
       targetPort: 8080 # The port your application is listening on
-      nodePort: 30003  # Second external port exposed
+      nodePort: 32761  # Second external port exposed
   type: NodePort
 
 ---
@@ -39,5 +39,5 @@ spec:
     - protocol: TCP
       port: 80        # The internal service port
       targetPort: 8080 # The port your application is listening on
-      nodePort: 30004  # Third external port exposed
+      nodePort: 32762  # Third external port exposed
   type: NodePort
