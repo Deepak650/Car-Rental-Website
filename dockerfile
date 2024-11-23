@@ -4,12 +4,11 @@ FROM nginx:latest
 # Set the working directory inside the container
 WORKDIR /usr/share/nginx/html
 
-# Copy the HTML, CSS, and JS files from the local machine to the container
-# Assuming your project is in the same directory as the Dockerfile
-COPY ./index.html ./style.css ./script.js ./
+# Copy the contents of the current directory (project files) to the container
+COPY . .
 
-# Expose port 80 for the web server
+# Expose port 80 to make the app accessible from outside the container
 EXPOSE 80
 
-# The default command to run Nginx when the container starts
+# Default command to run Nginx
 CMD ["nginx", "-g", "daemon off;"]
