@@ -7,6 +7,7 @@ spec:
     app: rental
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8080
-  type: LoadBalancer  # Exposes the service to the internet if supported by cloud provider
+      port: 80        # The internal service port
+      targetPort: 8080 # The port your application is listening on
+      nodePort: 30001  # The port exposed externally on all nodes
+  type: NodePort  # Exposes the service on a static port on each node
