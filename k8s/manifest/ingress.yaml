@@ -11,20 +11,20 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: rental-service
+            name: rental-service-v1
             port:
               number: 80
       - path: /v2
         pathType: Prefix
         backend:
           service:
-            name: rental-service
+            name: rental-service-v2
             port:
               number: 81
       - path: /v3
         pathType: Prefix
         backend:
           service:
-            name: rental-service
+            name: rental-service-v3
             port:
               number: 82

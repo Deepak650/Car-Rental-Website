@@ -9,35 +9,4 @@ spec:
     - protocol: TCP
       port: 80        # The internal service port
       targetPort: 8080 # The port your application is listening on
-      nodePort: 32760  # First external port exposed
-  type: NodePort
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: rental-service-port2
-spec:
-  selector:
-    app: rental
-  ports:
-    - protocol: TCP
-      port: 80        # The internal service port
-      targetPort: 8080 # The port your application is listening on
-      nodePort: 32761  # Second external port exposed
-  type: NodePort
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: rental-service-port3
-spec:
-  selector:
-    app: rental
-  ports:
-    - protocol: TCP
-      port: 80        # The internal service port
-      targetPort: 8080 # The port your application is listening on
-      nodePort: 32762  # Third external port exposed
-  type: NodePort
+  type: NodePort  # Kubernetes will automatically allocate a nodePort in the valid range
