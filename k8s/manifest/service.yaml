@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: rental-service
+  name: rental-service-port1
 spec:
   selector:
     app: rental
@@ -9,5 +9,35 @@ spec:
     - protocol: TCP
       port: 80        # The internal service port
       targetPort: 8080 # The port your application is listening on
-      nodePort: 30001  # The port exposed externally on all nodes
-  type: NodePort  # Exposes the service on a static port on each node
+      nodePort: 30001  # First external port exposed
+  type: NodePort
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rental-service-port2
+spec:
+  selector:
+    app: rental
+  ports:
+    - protocol: TCP
+      port: 80        # The internal service port
+      targetPort: 8080 # The port your application is listening on
+      nodePort: 30002  # Second external port exposed
+  type: NodePort
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rental-service-port3
+spec:
+  selector:
+    app: rental
+  ports:
+    - protocol: TCP
+      port: 80        # The internal service port
+      targetPort: 8080 # The port your application is listening on
+      nodePort: 30003  # Third external port exposed
+  type: NodePort

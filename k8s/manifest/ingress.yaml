@@ -1,18 +1,30 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ecommerce-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: rental-ingress
 spec:
   rules:
-  - host: ecommerce.example.com  # Replace with your domain
+  - host: rental.example.com
     http:
       paths:
-      - path: /
+      - path: /v1
         pathType: Prefix
         backend:
           service:
             name: rental-service
             port:
-              number: 8080
+              number: 80
+      - path: /v2
+        pathType: Prefix
+        backend:
+          service:
+            name: rental-service
+            port:
+              number: 81
+      - path: /v3
+        pathType: Prefix
+        backend:
+          service:
+            name: rental-service
+            port:
+              number: 82
