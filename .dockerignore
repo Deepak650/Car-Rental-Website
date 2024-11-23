@@ -1,0 +1,25 @@
+# Ignore version control files (e.g., Git)
+.git
+.gitignore
+
+# Ignore node_modules (if you're using Node.js)
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore environment variable files
+.env
+
+# Ignore build artifacts and temporary files
+build/
+dist/
+tmp/
+
+# Ignore IDE-specific files (e.g., Visual Studio Code, JetBrains)
+.vscode/
+.idea/
+
+# Ignore OS-specific files (e.g., macOS or Windows)
+.DS_Store
+Thumbs.db
