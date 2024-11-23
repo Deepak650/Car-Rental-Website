@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Register - Car Rental Service</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>CarRental Service</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="available-cars.html">Available Cars</a></li>
+                <li><a href="electric-cars.html">Electric Vehicles</a></li>
+                <li><a href="super-bikes.html">Super Bikes</a></li>
+                <li><a href="ev-scooters.html">EV Scooters</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Registration Section -->
+    <section id="register" class="form-section">
+        <div class="form-container">
+            <h2>Create Your Account</h2>
+            <form action="submit-registration.html" method="POST" id="registrationForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Create a password" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" />
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="cta-btn">Register</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 CarRental Service | All Rights Reserved</p>
+    </footer>
+
+    <!-- Script for form validation -->
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                event.preventDefault();  // Prevent form submission
+            }
+        });
+    </script>
+</body>
+</html>
