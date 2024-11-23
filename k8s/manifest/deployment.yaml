@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rental-deployment
+  labels:
+    app: rental
+spec:
+  replicas: 2  # Number of Nginx pods to run
+  selector:
+    matchLabels:
+      app: rental
+  template:
+    metadata:
+      labels:
+        app: rental
+    spec:
+      containers:
+      - name: nginx
+        image: deeshrucontainer.azurecr.io/ecommercewebsite:latest  # Replace with your Docker image name
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
